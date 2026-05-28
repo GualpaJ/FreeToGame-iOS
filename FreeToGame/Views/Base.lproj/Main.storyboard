@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="238" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="isI-uP-9Ni">
-                                <rect key="frame" x="0.0" y="162" width="393" height="622"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Game Cell" rowHeight="261" id="vdu-EU-5DA" customClass="GameViewCell" customModule="FreeToGame" customModuleProvider="target">
@@ -68,10 +68,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="isI-uP-9Ni" secondAttribute="trailing" id="BLI-rY-6MZ"/>
-                            <constraint firstItem="isI-uP-9Ni" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nyu-uf-6h2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="isI-uP-9Ni" secondAttribute="bottom" id="trm-lH-Kvj"/>
-                            <constraint firstItem="isI-uP-9Ni" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zAz-Er-cDK"/>
+                            <constraint firstAttribute="bottom" secondItem="isI-uP-9Ni" secondAttribute="bottom" id="eWB-5O-ISt"/>
+                            <constraint firstItem="isI-uP-9Ni" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jfT-Cs-AXF"/>
+                            <constraint firstItem="isI-uP-9Ni" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mF0-Yc-FHg"/>
+                            <constraint firstItem="isI-uP-9Ni" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="obP-Yo-sJO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FreeToGame" id="MCh-9N-Qdl"/>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418" y="4"/>
+            <point key="canvasLocation" x="-419.08396946564886" y="3.5211267605633805"/>
         </scene>
         <!--Detail-->
         <scene sceneID="dHI-8h-c1H">
