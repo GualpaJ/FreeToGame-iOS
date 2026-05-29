@@ -11,13 +11,17 @@ struct Game : Codable {
     let id:Int
     let title:String
     let thumbnail:String
-    let short_description:String
+    let shortDescription:String
     let genre:String
     let platform:String
+    let developer:String
+    let publisher:String
+    let description: String?
+    
     
     enum CodingKeys : String, CodingKey {
-        case id, title, thumbnail,genre,platform
-        case short_description = "short_description"
+        case id, title, thumbnail,genre,platform, description, developer, publisher
+        case shortDescription = "short_description"
     }
     
 }

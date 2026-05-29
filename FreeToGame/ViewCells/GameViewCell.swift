@@ -18,7 +18,7 @@ class GameViewCell: UITableViewCell {
     func render(with game: Game){
         titleLabel.text = game.title
         thumbnailImageView.loadFrom(url: game.thumbnail)
-        descriptionLabel.text = game.short_description
+        descriptionLabel.text = game.shortDescription
     }
 
     override func awakeFromNib() {
