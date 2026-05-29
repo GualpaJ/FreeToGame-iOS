@@ -32,31 +32,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="238" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="isI-uP-9Ni">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="isI-uP-9Ni">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Game Cell" rowHeight="261" id="vdu-EU-5DA" customClass="GameViewCell" customModule="FreeToGame" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="261"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Game Cell" rowHeight="299" id="vdu-EU-5DA" customClass="GameViewCell" customModule="FreeToGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="299"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdu-EU-5DA" id="XR3-bH-vqJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="261"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQn-Xh-aCQ">
-                                                    <rect key="frame" x="20" y="11" width="353" height="188"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqD-c9-9tM">
-                                                    <rect key="frame" x="20" y="207" width="353" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEo-kC-ugc" userLabel="Card View Shadow">
+                                                    <rect key="frame" x="20" y="11" width="353" height="277"/>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc7-K5-JhE" userLabel="Card View">
+                                                    <rect key="frame" x="20" y="11" width="353" height="277"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OQn-Xh-aCQ">
+                                                            <rect key="frame" x="0.0" y="1.6666666666666572" width="353" height="177"/>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="180" id="i0T-KH-qGA"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqD-c9-9tM">
+                                                            <rect key="frame" x="8" y="188" width="337" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Short Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlP-Dg-cKe">
+                                                            <rect key="frame" x="8" y="248" width="337" height="20.333333333333371"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="TlP-Dg-cKe" secondAttribute="trailing" constant="8" id="0Rp-Bl-SWn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VqD-c9-9tM" secondAttribute="trailing" constant="8" id="0ao-Og-jtD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OQn-Xh-aCQ" secondAttribute="trailing" id="1ua-hW-ZfY"/>
+                                                        <constraint firstItem="VqD-c9-9tM" firstAttribute="leading" secondItem="Zc7-K5-JhE" secondAttribute="leading" constant="8" id="DJv-Aw-YOh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TlP-Dg-cKe" secondAttribute="trailing" constant="8" id="Djj-sO-FQb"/>
+                                                        <constraint firstItem="OQn-Xh-aCQ" firstAttribute="leading" secondItem="Zc7-K5-JhE" secondAttribute="leading" id="HBG-RE-6Sa"/>
+                                                        <constraint firstItem="TlP-Dg-cKe" firstAttribute="top" secondItem="VqD-c9-9tM" secondAttribute="bottom" constant="8" symbolic="YES" id="I1y-D6-Amv"/>
+                                                        <constraint firstItem="TlP-Dg-cKe" firstAttribute="leading" secondItem="Zc7-K5-JhE" secondAttribute="leading" constant="8" id="gIM-up-wbh"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TlP-Dg-cKe" secondAttribute="bottom" constant="8" id="kZn-aU-LpT"/>
+                                                        <constraint firstItem="OQn-Xh-aCQ" firstAttribute="top" secondItem="Zc7-K5-JhE" secondAttribute="top" id="mlO-bU-dWf"/>
+                                                        <constraint firstItem="VqD-c9-9tM" firstAttribute="top" secondItem="OQn-Xh-aCQ" secondAttribute="bottom" constant="8" id="tIw-4c-lhM"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Zc7-K5-JhE" secondAttribute="trailing" constant="20" id="2W3-WV-wv6"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="top" secondItem="wEo-kC-ugc" secondAttribute="top" id="8Cb-uh-hzL"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="trailing" secondItem="wEo-kC-ugc" secondAttribute="trailing" id="Bmv-y0-zP1"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="bottom" secondItem="wEo-kC-ugc" secondAttribute="bottom" id="cGT-8W-kaq"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="leading" secondItem="XR3-bH-vqJ" secondAttribute="leading" constant="20" id="kEt-fE-Fn2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zc7-K5-JhE" secondAttribute="bottom" constant="11" id="oPf-VT-97S"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="leading" secondItem="wEo-kC-ugc" secondAttribute="leading" id="vVn-pO-Auc"/>
+                                                <constraint firstItem="Zc7-K5-JhE" firstAttribute="top" secondItem="XR3-bH-vqJ" secondAttribute="top" constant="11" id="yip-r2-zre"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cardShadowView" destination="wEo-kC-ugc" id="DBz-In-ncD"/>
+                                            <outlet property="cardView" destination="Zc7-K5-JhE" id="ldC-Vx-7CP"/>
+                                            <outlet property="descriptionLabel" destination="TlP-Dg-cKe" id="RCe-rn-tqx"/>
                                             <outlet property="thumbnailImageView" destination="OQn-Xh-aCQ" id="uYy-wb-ohf"/>
                                             <outlet property="titleLabel" destination="VqD-c9-9tM" id="i0I-PV-L0e"/>
                                             <segue destination="Gbv-Hz-opz" kind="show" id="2i2-0n-V6u"/>
@@ -103,6 +147,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

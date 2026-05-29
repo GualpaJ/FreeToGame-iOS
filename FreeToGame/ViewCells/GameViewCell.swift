@@ -11,15 +11,23 @@ class GameViewCell: UITableViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var cardShadowView: UIView!
     
     func render(with game: Game){
         titleLabel.text = game.title
         thumbnailImageView.loadFrom(url: game.thumbnail)
+        descriptionLabel.text = game.short_description
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardView.layer.cornerRadius = 20
+        cardView.layer.masksToBounds = true
+        cardShadowView.backgroundColor = .clear
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
