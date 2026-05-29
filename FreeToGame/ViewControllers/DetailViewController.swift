@@ -66,5 +66,21 @@ class DetailViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func share(_ sender: Any) {
+        let textToShare = [game.profileUrl]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func playNow(_ sender: Any) {
+        if let url = URL (string: game.gameUrl) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
 
 }

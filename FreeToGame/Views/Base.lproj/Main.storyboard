@@ -222,14 +222,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G46-DY-327" userLabel="Separator View">
-                                                <rect key="frame" x="0.0" y="424" width="393" height="1"/>
+                                                <rect key="frame" x="0.0" y="482.33333333333331" width="393" height="1"/>
                                                 <color key="backgroundColor" systemColor="separatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="bDN-e1-1w5"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-WY-gm8" userLabel="Description View">
-                                                <rect key="frame" x="8" y="433" width="377" height="68.333333333333314"/>
+                                                <rect key="frame" x="8" y="491.33333333333331" width="377" height="68.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Decription content" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-D0-c5L">
                                                         <rect key="frame" x="8" y="7.9999999999999982" width="361" height="20.333333333333329"/>
@@ -259,6 +259,17 @@
                                                     <constraint firstItem="hBb-D0-c5L" firstAttribute="top" secondItem="FYa-WY-gm8" secondAttribute="top" constant="8" id="nbD-Ol-eCA"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXY-to-eei">
+                                                <rect key="frame" x="96.666666666666686" y="432" width="200" height="34.333333333333314"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="rJ9-HE-1eD"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Play Now"/>
+                                                <connections>
+                                                    <action selector="playNow:" destination="Gbv-Hz-opz" eventType="touchUpInside" id="Ldp-US-PSn"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -272,7 +283,6 @@
                                             <constraint firstItem="s8m-oN-j0n" firstAttribute="leading" secondItem="LL1-PW-LMG" secondAttribute="leading" constant="8" id="Eyo-qE-fWP"/>
                                             <constraint firstAttribute="trailing" secondItem="IxS-oQ-yrl" secondAttribute="trailing" id="MVI-KK-8dD"/>
                                             <constraint firstItem="s8m-oN-j0n" firstAttribute="top" secondItem="NKs-oa-Dh9" secondAttribute="bottom" constant="27" id="MiW-LL-l3b"/>
-                                            <constraint firstItem="G46-DY-327" firstAttribute="top" secondItem="ypQ-Ye-YAG" secondAttribute="bottom" constant="8" id="RXP-4a-ze9"/>
                                             <constraint firstItem="IGl-0c-AtS" firstAttribute="top" secondItem="s8m-oN-j0n" secondAttribute="bottom" constant="8" symbolic="YES" id="SQy-cb-mk8"/>
                                             <constraint firstAttribute="trailing" secondItem="FYa-WY-gm8" secondAttribute="trailing" constant="8" id="U1K-n7-xU6"/>
                                             <constraint firstAttribute="trailing" secondItem="G46-DY-327" secondAttribute="trailing" id="YE2-Uh-7Hv"/>
@@ -280,7 +290,10 @@
                                             <constraint firstItem="ypQ-Ye-YAG" firstAttribute="leading" secondItem="LL1-PW-LMG" secondAttribute="leading" constant="8" id="fPr-ZW-Pq4"/>
                                             <constraint firstAttribute="trailing" secondItem="s8m-oN-j0n" secondAttribute="trailing" constant="8" id="fwT-gE-Z5C"/>
                                             <constraint firstItem="ypQ-Ye-YAG" firstAttribute="top" secondItem="IxS-oQ-yrl" secondAttribute="bottom" constant="8" symbolic="YES" id="gMb-u3-TJs"/>
+                                            <constraint firstItem="RXY-to-eei" firstAttribute="top" secondItem="ypQ-Ye-YAG" secondAttribute="bottom" constant="16" id="qKd-oj-Isr"/>
+                                            <constraint firstItem="G46-DY-327" firstAttribute="top" secondItem="RXY-to-eei" secondAttribute="bottom" constant="16" id="rJ8-EM-ew7"/>
                                             <constraint firstAttribute="height" constant="1000" id="ro6-0L-J8k"/>
+                                            <constraint firstItem="RXY-to-eei" firstAttribute="centerX" secondItem="LL1-PW-LMG" secondAttribute="centerX" id="tp0-iL-BbA"/>
                                             <constraint firstItem="IGl-0c-AtS" firstAttribute="leading" secondItem="LL1-PW-LMG" secondAttribute="leading" constant="8" id="vup-nB-jpy"/>
                                             <constraint firstItem="FYa-WY-gm8" firstAttribute="leading" secondItem="LL1-PW-LMG" secondAttribute="leading" constant="8" id="yYF-WD-xcQ"/>
                                         </constraints>
@@ -308,6 +321,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cxf-Uv-sve">
                         <barButtonItem key="backBarButtonItem" title=" " id="vl0-6K-AUI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="5AC-qL-Bes"/>
                     </navigationItem>
                     <size key="freeformSize" width="393" height="1290"/>
                     <connections>
@@ -329,6 +343,7 @@
     </scenes>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
+        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

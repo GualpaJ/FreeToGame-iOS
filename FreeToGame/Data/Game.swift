@@ -16,12 +16,17 @@ struct Game : Codable {
     let platform:String
     let developer:String
     let publisher:String
+    let gameUrl: String
+    let profileUrl: String
     let description: String?
     
     
     enum CodingKeys : String, CodingKey {
         case id, title, thumbnail,genre,platform, description, developer, publisher
         case shortDescription = "short_description"
+        case gameUrl = "game_url"
+        case profileUrl = "freetogame_profile_url"
+        
     }
     
 }
