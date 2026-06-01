@@ -7,15 +7,28 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var genreLabel: UILabel!
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var developerLabel: UILabel!
+    
+    @IBOutlet weak var screenshotsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var systemRequirementsOsLabel: UILabel!
+    @IBOutlet weak var systemRequirementsProcessorLabel: UILabel!
+    @IBOutlet weak var systemRequirementsMemoryLabel: UILabel!
+    @IBOutlet weak var systemRequirementsGraphicsLabel: UILabel!
+    @IBOutlet weak var systemRequirementsStorageLabel: UILabel!
+    
+    
+    
     
     
     @IBOutlet var roundedViews: [UIView]!
@@ -29,6 +42,9 @@ class DetailViewController: UIViewController {
             view.layer.cornerRadius = 10
         }
         
+        //configuracion del collectionView
+        screenshotsCollectionView.dataSource = self
+        
         navigationItem.title = game.title
         
         //Rellamos los datos que tenemos
@@ -37,6 +53,13 @@ class DetailViewController: UIViewController {
         genreLabel.text = game.genre
         publisherLabel.text = game.publisher
         developerLabel.text = game.developer
+        
+        // Colocamos aqui los datos para que nada mas entrar a la pantalla cargue estos datos
+        systemRequirementsOsLabel.text = "Not avaible"
+        systemRequirementsProcessorLabel.text = "Not avaible"
+        systemRequirementsMemoryLabel.text = "Not avaible"
+        systemRequirementsGraphicsLabel.text = "Not avaible"
+        systemRequirementsStorageLabel.text = "Not avaible"
 
         Task {
             game = await GameService.getGameByID(game.id)
@@ -52,7 +75,32 @@ class DetailViewController: UIViewController {
     func loadData() {
         descriptionLabel.text = game.description
         
+        // Como son valores opcionales, lo solventamos con un if
+        if let systemRequirements = game.systemRequirements {
+            systemRequirementsOsLabel.text = systemRequirements.os
+            systemRequirementsProcessorLabel.text = systemRequirements.processor
+            systemRequirementsMemoryLabel.text = systemRequirements.memory
+            systemRequirementsGraphicsLabel.text = systemRequirements.graphics
+            systemRequirementsStorageLabel.text = systemRequirements.storage
+        }
+        screenshotsCollectionView.reloadData()
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let screenshots = game.screenshots {
+            return screenshots.count
+        }else {
+            return 0
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Screenshots Cell", for: indexPath) as! ScreenshotsViewCell
+        let screenshot = game.screenshots![indexPath.row]
+        cell.render(with: screenshot.image)
+        return cell
     }
     
     @IBAction func showMore (_ sender: UIButton){
