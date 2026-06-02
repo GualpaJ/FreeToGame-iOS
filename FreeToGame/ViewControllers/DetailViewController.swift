@@ -44,6 +44,7 @@ class DetailViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         //configuracion del collectionView
         screenshotsCollectionView.dataSource = self
+        screenshotsCollectionView.delegate = self
         
         navigationItem.title = game.title
         
@@ -130,5 +131,38 @@ class DetailViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
     }
+    
+    //Este bloque para image
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("✅ Tap detectado en índice: \(indexPath.row)")
+        
+        // 🔥 Vibración al abrir el zoom
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
+        guard let screenshot = game.screenshots?[indexPath.row] else { return }
+        
+        let zoomVC = storyboard?.instantiateViewController(withIdentifier: "ImageZoomViewController") as! ImageZoomViewController
+        zoomVC.imageUrl = screenshot.image
+        zoomVC.modalPresentationStyle = .fullScreen
+        zoomVC.modalTransitionStyle = .crossDissolve
+        
+        present(zoomVC, animated: true, completion: nil)
+    }
 
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ScreenshotsViewCell {
+            UIView.animate(withDuration: 0.1) {
+                cell.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            }
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? ScreenshotsViewCell {
+            UIView.animate(withDuration: 0.1) {
+                cell.transform = .identity
+            }
+        }
+    }
 }
