@@ -60,8 +60,8 @@ Aplicación nativa de iOS desarrollada en Swift que consume la API de FreeToGame
 
 ### 🟢 v1.0 – Lista y búsqueda
 <p align="center">
-  <img src="screenshots/list.png" width="250">
-  <img src="screenshots/search.png" width="250">
+  <img src="list.png" width="250">
+  <img src="search.png" width="250">
 </p>
 
 ### 🔵 v1.1 – Pantalla de detalle
