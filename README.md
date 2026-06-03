@@ -66,20 +66,20 @@ Aplicación nativa de iOS desarrollada en Swift que consume la API de FreeToGame
 
 ### 🔵 v1.1 – Pantalla de detalle
 <p align="center">
-  <img src="screenshots/detail.png" width="250">
-  <img src="screenshots/description_expand.png" width="250">
+  <img src="detail.png" width="250">
+  <img src="description_expand.png" width="250">
 </p>
 
 ### 🟣 v1.2 – Requisitos y capturas
 <p align="center">
-  <img src="screenshots/requirements.png" width="250">
-  <img src="screenshots/screenshots.png" width="250">
+  <img src="requirements.png" width="250">
+  <img src="screenshots.png" width="250">
 </p>
 
 ### 🔴 v1.3 – Zoom interactivo
 <p align="center">
-  <img src="screenshots/zoom.png" width="250">
-  <img src="screenshots/zoom_pinch.png" width="250">
+  <img src="zoom.png" width="250">
+  <img src="zoom_pinch.png" width="250">
 </p>
 
 ---
